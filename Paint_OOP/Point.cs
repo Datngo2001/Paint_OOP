@@ -33,5 +33,10 @@ namespace Paint_OOP
             Console.Write("X: {0}", X);
             Console.Write("Y: {0}", Y);
         }
+        public virtual void Move(double dx, double dy)
+        {
+            X += dx;
+            Y += dy;
+        }
     }
 }
