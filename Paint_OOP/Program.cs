@@ -57,7 +57,7 @@ namespace Paint_OOP
                         break;
                 }                
             }
-            while (choise != 5);
+            while (choise != 7);
         }
     }
 }
