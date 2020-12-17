@@ -6,12 +6,12 @@ namespace Paint_OOP
     {
         static void Main(string[] args)
         {
-            Shape sh = new Shape();
             char choise;
             do
             {
                 Console.WriteLine();
                 Console.WriteLine("-------Menu-------");
+                Console.WriteLine("0. Add a point");
                 Console.WriteLine("1. Add a line");
                 Console.WriteLine("2. Add a triagle");
                 Console.WriteLine("3. Add a rectangle");
@@ -25,6 +25,11 @@ namespace Paint_OOP
 
                 switch (choise)
                 {
+                    case '0':
+                        Point point = new Point();
+                        point.Input();
+                        point.Draw();
+                        break;
                     case '1':
                         Console.WriteLine("Class line");
                         // Line line = new Line();

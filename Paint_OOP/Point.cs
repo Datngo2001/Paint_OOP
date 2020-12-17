@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Paint_OOP
 {
-    class Point
+    class Point : Shape
     {
         public double X { get; set; }
         public double Y { get; set; }
@@ -12,8 +12,9 @@ namespace Paint_OOP
         {
 
         }
-        public Point(double x, double y)
+        public Point(string name, double x, double y)
         {
+            Name = name;
             X = x;
             Y = y;
         }
@@ -21,22 +22,36 @@ namespace Paint_OOP
         {
 
         }
-        public virtual void Input()
+        public override void Input()
         {
+            Console.Write("Name ");
+            Name = Console.ReadLine();
             Console.Write("Enter point X: ");
             X = Convert.ToDouble(Console.ReadLine());
             Console.Write("Enter poiny Y: ");
             Y = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Color: ");
+            Color = Console.ReadLine();
         }
-        public virtual void Output()
+        public override void Output()
         {
             Console.Write("X: {0}", X);
             Console.Write("Y: {0}", Y);
         }
-        public virtual void Move(double dx, double dy)
+        public override void Move(double dx, double dy)
         {
             X += dx;
             Y += dy;
+        }
+        public override double CalculateArea()
+        {
+            return 0;
+        }
+        public override void Draw()
+        {
+            Console.ForegroundColor = consoleColor;
+            Console.WriteLine("Drawed a " + Color + " point " + Name + " with position (" + X + "," + Y + ")");
+            Console.ResetColor();
         }
     }
 }

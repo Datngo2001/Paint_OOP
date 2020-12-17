@@ -4,42 +4,32 @@ using System.Text;
 
 namespace Paint_OOP
 {
-    class Shape
+    abstract class Shape
     {
         public string Name { get; set; }
-        public Point point1 = new Point();
-        public Point point2 = new Point();
-        public Shape()
+        public double Area { get; set; }
+        protected ConsoleColor consoleColor = Console.ForegroundColor;
+        public string Color
         {
-
+            get { return consoleColor.ToString(); }
+            set { ChangeColor(value); }
         }
-        public Shape(double x1, double x2, double y1, double y2)
+        public abstract void Input();
+        public abstract void Output();
+        public abstract double CalculateArea();
+        public abstract void Move(double dx, double dy);
+        public abstract void Draw();
+        public void ChangeColor(string newColor)
         {
-            point1.X = x1;
-            point2.X = x2;
-            point1.Y = y1;
-            point2.Y = y2;
+            try
+            {
+                consoleColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), newColor, true);
+            }
+            catch (Exception)
+            {
+                // Invalid color
+            }
         }
-        ~Shape()
-        {
-
-        }
-        public virtual void Input()
-        {
-            Console.WriteLine("Enter name: ");
-            Name = Console.ReadLine();
-            Console.WriteLine("Enter point 1: ");
-            point1.Input();
-            Console.WriteLine("Enter point 2: ");
-            point2.Input();
-        }
-        public virtual void Output()
-        {
-            Console.WriteLine("Name: {0}", Name);
-            Console.WriteLine("Point 1: ");
-            point1.Output();
-            Console.WriteLine("Point 2: ");
-            point2.Output();
-        }
+        //public void Copy();
     }
 }
