@@ -43,7 +43,9 @@ namespace Paint_OOP
                         Console.WriteLine("");
                         break;
                     case '4':
-                        Console.WriteLine("");
+                        Circle circle = new Circle();
+                        circle.Input();
+                        circle.Draw();
                         break;
                     case '6':
                         Console.WriteLine("");

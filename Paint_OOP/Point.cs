@@ -18,6 +18,13 @@ namespace Paint_OOP
             X = x;
             Y = y;
         }
+        public Point(string name, double x, double y, string color)
+        {
+            Name = name;
+            X = x;
+            Y = y;
+            Color = color;
+        }
         ~Point()
         {
 
@@ -35,8 +42,10 @@ namespace Paint_OOP
         }
         public override void Output()
         {
-            Console.Write("X: {0}", X);
-            Console.Write("Y: {0}", Y);
+            Console.WriteLine("Name " + Name);
+            Console.WriteLine("X: {0}", X);
+            Console.WriteLine("Y: {0}", Y);
+            Console.WriteLine("Color: " + Color);
         }
         public override void Move(double dx, double dy)
         {
