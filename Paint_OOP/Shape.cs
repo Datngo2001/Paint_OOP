@@ -6,10 +6,10 @@ namespace Paint_OOP
 {
     abstract class Shape
     {
-        public string Name { get; set; }
-        public double Area { get; set; }
+        public virtual string Name { get; set; }
+        public virtual double Area { get; protected set; }
         protected ConsoleColor consoleColor = Console.ForegroundColor;
-        public string Color
+        public virtual string Color
         {
             get { return consoleColor.ToString(); }
             set { ChangeColor(value); }
@@ -19,7 +19,7 @@ namespace Paint_OOP
         public abstract double CalculateArea();
         public abstract void Move(double dx, double dy);
         public abstract void Draw();
-        public void ChangeColor(string newColor)
+        public virtual void ChangeColor(string newColor)
         {
             try
             {

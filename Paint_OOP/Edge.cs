@@ -6,11 +6,17 @@ namespace Paint_OOP
 {
     class Edge : Shape
     {
-        protected List<Point> points = new List<Point>();
-        public List<Point> Points
+        Point point1 = new Point();
+        Point point2 = new Point();
+        public Point Point1
         {
-            get { return points; }
-            set { points = value; }
+            get { return point1; }
+            set { point1 = value; }
+        }
+        public Point Point2
+        {
+            get { return point2; }
+            set { point2 = value; }
         }
         public double Length { get; set; }
         public Edge()
@@ -23,8 +29,8 @@ namespace Paint_OOP
             {
                 Name = name;
                 Color = color;
-                Points.Add(new Point(namePoint1, x1, y1));
-                Points.Add(new Point(namePoint2, x2, y2));
+                Point1 = new Point(namePoint1, x1, y1);
+                Point2 = new Point(namePoint2, x2, y2);
                 CalculateLenght();
             }
             catch (Exception e)
@@ -37,14 +43,29 @@ namespace Paint_OOP
             try
             {
                 Name = name;
-                Points.Add(new Point("A", x1, y1));
-                Points.Add(new Point("B", x2, y2));
+                Point1 = new Point("A", x1, y1);
+                Point2 = new Point("B", x2, y2);
                 CalculateLenght();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
+        }
+        public Edge(string name, Point point, string namePoint2, double x2, double y2, string color)
+        {
+            Name = name;
+            Point1 = point;
+            Point2 = new Point(namePoint2, x2, y2);
+            Color = color;
+            CalculateLenght();
+        }
+        public Edge(Point point1, Point point2)
+        {
+            Name = point1.Name + point2.Name;
+            Point1 = point1;
+            Point2 = point2;
+            CalculateLenght();
         }
         ~Edge()
         {
@@ -59,11 +80,11 @@ namespace Paint_OOP
                 Console.Write("Color: ");
                 Color = Console.ReadLine();
                 Console.WriteLine("Point 1: ");
-                Point point1 = new Point();
-                point1.Input();
+                Point1 = new Point();
+                Point1.Input();
                 Console.WriteLine("Point 2: ");
-                Point point2 = new Point();
-                point1.Input();
+                Point2 = new Point();
+                Point2.Input();
             }
             catch (Exception e)
             {
@@ -77,9 +98,9 @@ namespace Paint_OOP
                 Console.Write("Name: " + Name);
                 Console.Write("Color: " + Color);
                 Console.WriteLine("Point 1: ");
-                Points[0].Output();
+                Point1.Output();
                 Console.WriteLine("Point 2: ");
-                Points[1].Output();
+                Point2.Output();
                 Console.WriteLine("Length: {0}", Length);
             }
             catch (Exception e)
@@ -89,9 +110,31 @@ namespace Paint_OOP
         }
         public override void Move(double dx, double dy)
         {
-            for (int i = 0; i < Points.Count; i++)
+            Point1.Move(dx, dy);
+            Point2.Move(dx, dy);
+        }
+        public void LengthIncrease(double dL)
+        {
+            Length += dL;
+            if(Point1.X < Point2.X)
             {
-                Points[i].Move(dx, dy);
+                Point1.X -= (dL / 2);
+                Point2.X += (dL / 2);
+            }
+            else
+            {
+                Point1.X += (dL / 2);
+                Point2.X -= (dL / 2);
+            }
+            if(Point1.Y < Point2.Y)
+            {
+                Point1.Y -= (dL / 2);
+                Point2.Y += (dL / 2);
+            }
+            else
+            {
+                Point1.Y += (dL / 2);
+                Point2.Y -= (dL / 2);
             }
         }
         public override void Draw()
@@ -99,19 +142,17 @@ namespace Paint_OOP
             Console.ForegroundColor = consoleColor;
             Console.WriteLine("Drawed a " + Color + " edge " + Name + " with leight is " + Length);
             Console.WriteLine("and the points it go though is ");
-            for (int i = 0; i < Points.Count; i++)
-            {
-                Points[i].Output();
-            }
+            Point1.Output();
+            Point2.Output();
             Console.ResetColor();
         }
         public void CalculateLenght()
         {
-            Length = Math.Sqrt(Math.Pow(Points[0].X - Points[1].X, 2) + Math.Pow(Points[0].Y - Points[1].Y, 2));
+            Length = Math.Sqrt(Math.Pow(Point1.X - Point2.X, 2) + Math.Pow(Point1.Y - Point2.Y, 2));
         }
         public override double CalculateArea()
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }
