@@ -40,7 +40,9 @@ namespace Paint_OOP
                         Console.WriteLine("");
                         break;
                     case '3':
-                        Console.WriteLine("");
+                        Rectangular rectangular = new Rectangular();
+                        rectangular.Input();
+                        rectangular.Draw();
                         break;
                     case '4':
                         Circle circle = new Circle();
