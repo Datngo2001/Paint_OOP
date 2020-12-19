@@ -48,6 +48,11 @@ namespace Paint_OOP
                         triagle.Output();
                         triagle.TypeofTriangle();
                         triagle.Draw();
+                        Console.Write("Enter the distance dx you want to move: ");
+                        double dx = Convert.ToDouble(Console.ReadLine());
+                        Console.Write("Enter the distance dy you want to move: ");
+                        double dy = Convert.ToDouble(Console.ReadLine());
+                        triagle.Move(dx, dy);
 
                         break;
                     case '3':

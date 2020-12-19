@@ -197,16 +197,17 @@ namespace Paint_OOP
         public override void Draw()
         {
             Console.ForegroundColor = consoleColor;
-            Console.WriteLine("Drawed a " + Color + " triangle " + Name + " with Edge 1 is " + EdgeA + " Edge 2 is " + EdgeB + " and Edge 3 is " + EdgeC);
+            Console.WriteLine("Drawed a " + Color + " triangle " + Name + " with Edge 1 = " + EdgeA + " Edge 2 = " + EdgeB + " and Edge 3 = " + EdgeC);
             Console.ResetColor();
         }
         public override void Move(double dx, double dy)
         {
             try
             {
-                for(int i = 0; i < Pointss.Length; i++)
+                for(int i = 0; i < Pointss.Length ; i++)
                 {
-                    Pointss[i].Move(dx, dy);
+                    Console.WriteLine("The point {0} when moved! ", i + 1);
+                    Pointss[i].Move(dx, dy);                    
                 }
             }
             catch (Exception e)

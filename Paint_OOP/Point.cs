@@ -50,7 +50,9 @@ namespace Paint_OOP
         public override void Move(double dx, double dy)
         {
             X += dx;
-            Y += dy;
+            Y += dy;                  
+            Console.WriteLine("X = " + X );
+            Console.WriteLine("Y = " + Y);
         }
         public override double CalculateArea()
         {
