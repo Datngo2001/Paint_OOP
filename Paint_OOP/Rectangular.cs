@@ -107,6 +107,7 @@ namespace Paint_OOP
                 for (int i = 0; i < Points.Length; i++)
                 {
                     Points[i].Output();
+                    Console.WriteLine("\n");
                 }
             }
             catch (Exception e)

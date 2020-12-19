@@ -9,20 +9,26 @@ namespace Paint_OOP
             char choise;
             do
             {
-                Console.WriteLine();
-                Console.WriteLine("-------Menu-------");
-                Console.WriteLine("0. Add a point");
-                Console.WriteLine("1. Add a line");
-                Console.WriteLine("2. Add a triagle");
-                Console.WriteLine("3. Add a rectangle");
-                Console.WriteLine("4. Add a circle");
-                Console.WriteLine("5. Add a angle");
-                Console.WriteLine("6. Add a egde");
-                Console.WriteLine("7. Exit");
-                Console.WriteLine();
+                try
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("-------Menu-------");
+                    Console.WriteLine("0. Add a point");
+                    Console.WriteLine("1. Add a line");
+                    Console.WriteLine("2. Add a triagle");
+                    Console.WriteLine("3. Add a rectangle");
+                    Console.WriteLine("4. Add a circle");
+                    Console.WriteLine("5. Add a angle");
+                    Console.WriteLine("6. Add a egde");
+                    Console.WriteLine("7. Exit");
+                    Console.WriteLine();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
                 Console.WriteLine("Enter your choise: ");
                 choise = Convert.ToChar(Console.ReadLine());
-
                 switch (choise)
                 {
                     case '0':
@@ -37,11 +43,17 @@ namespace Paint_OOP
                         // abcxyz();
                         break;
                     case '2':
-                        Console.WriteLine("");
+                        Triagle triagle = new Triagle();
+                        triagle.Input();
+                        triagle.Output();
+                        triagle.TypeofTriangle();
+                        triagle.Draw();
+
                         break;
                     case '3':
                         Rectangular rectangular = new Rectangular();
                         rectangular.Input();
+                        rectangular.Output();
                         rectangular.Draw();
                         break;
                     case '4':
@@ -66,7 +78,7 @@ namespace Paint_OOP
                         break;
                 }                
             }
-            while (choise != 7);
+            while (choise != '7');
         }
     }
 }
