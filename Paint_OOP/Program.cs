@@ -27,7 +27,7 @@ namespace Paint_OOP
                 {
                     case '0':
                         Point point = new Point();
-                        point.Input();
+                        point.Input();                        
                         point.Draw();
                         break;
                     case '1':
@@ -45,10 +45,17 @@ namespace Paint_OOP
                     case '4':
                         Circle circle = new Circle();
                         circle.Input();
+                        circle.CalculateArea();
+                        circle.Output();
                         circle.Draw();
                         break;
                     case '6':
                         Console.WriteLine("");
+                        Edge edge = new Edge();
+                        edge.Input();
+                        edge.CalculateLenght();
+                        edge.Output();
+                        edge.Draw();
                         break;
                     case '7':
                         break;
