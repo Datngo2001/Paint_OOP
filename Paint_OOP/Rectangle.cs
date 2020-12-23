@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Paint_OOP
 {
-    class Rectangular : Shape
+    class Rectangle : Shape
     {
         protected Point[] points = new Point[4];
         public Point[] Points
@@ -20,11 +20,11 @@ namespace Paint_OOP
         }
         public double Height { get; set; }
         public double Width { get; set; }
-        public Rectangular()
+        public Rectangle()
         {
 
         }
-        public Rectangular(string name, double width, double height)
+        public Rectangle(string name, double width, double height)
         {
             try
             {
@@ -41,7 +41,23 @@ namespace Paint_OOP
                 throw;
             }
         }
-        public Rectangular(string name, string color, double width, double height)
+        public Rectangle(string name, string color)
+        {
+            try
+            {
+                Points[0] = new Point(name[0].ToString(), 0, 0);
+                Color = color;
+                CalculateArea();
+                createOtherPoint();
+                createEdge();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
+        }
+        public Rectangle(string name, string color, double width, double height)
         {
             try
             {
@@ -59,13 +75,13 @@ namespace Paint_OOP
                 throw;
             }
         }
-        protected virtual void createOtherPoint()
+        public virtual void createOtherPoint()
         {
             Points[1] = new Point(Name[1].ToString(), 0, Width);
             Points[2] = new Point(Name[2].ToString(), Height, Width);
             Points[3] = new Point(Name[3].ToString(), Height, 0);
         }
-        protected virtual void createEdge()
+        public virtual void createEdge()
         {
             Edges[0] = new Edge(Points[0], Points[1]);
             Edges[1] = new Edge(Points[1], Points[2]);
@@ -145,7 +161,6 @@ namespace Paint_OOP
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                throw;
             }
         }
     }

@@ -56,7 +56,7 @@ namespace Paint_OOP
 
                         break;
                     case '3':
-                        Rectangular rectangular = new Rectangular();
+                        Rectangle rectangular = new Rectangle();
                         rectangular.Input();
                         rectangular.Output();
                         rectangular.Draw();
