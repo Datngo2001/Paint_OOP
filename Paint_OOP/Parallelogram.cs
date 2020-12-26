@@ -50,7 +50,6 @@ namespace Paint_OOP
             {
                 Console.WriteLine(e.Message);
             }
-            Rhombus
         }
         public override void Output()
         {
