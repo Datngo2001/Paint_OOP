@@ -154,5 +154,10 @@ namespace Paint_OOP
         {
             return 0;
         }
+        public override void Turn(double angle = 0, double a = 0, double b = 0)
+        {
+            Point1.Turn(angle, a, b);
+            Point2.Turn(angle, a, b);
+        }
     }
 }

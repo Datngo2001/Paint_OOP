@@ -36,6 +36,13 @@ namespace Paint_OOP
                 Shapes[i].Move(dx, dy);
             }
         }
+        public override void Turn(double angle = 0, double a = 0, double b = 0)
+        {
+            for (int i = 0; i < Shapes.Count; i++)
+            {
+                Shapes[i].Turn(angle, a, b);
+            }
+        }
         public override void Draw()
         {
             Console.WriteLine("Drawed a  group of shape " + Name);

@@ -18,6 +18,7 @@ namespace Paint_OOP
         public abstract void Output();
         public abstract double CalculateArea();
         public abstract void Move(double dx, double dy);
+        public abstract void Turn(double angle = 0, double a = 0, double b = 0);
         public abstract void Draw();
         public virtual void ChangeColor(string newColor)
         {
