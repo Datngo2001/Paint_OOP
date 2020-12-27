@@ -50,6 +50,7 @@ namespace Paint_OOP
             Color = Console.ReadLine();
             Console.WriteLine("Enter the center: ");
             center.Input();
+            CalculateArea();
         }
         public override void Output()
         {
@@ -58,6 +59,8 @@ namespace Paint_OOP
             Console.WriteLine("Color: " + Color);
             Console.WriteLine("The center: ");
             center.Output();
+            Area = CalculateArea();
+            Console.WriteLine("Area: {0}", Area);
         }
         public override double CalculateArea()
         {

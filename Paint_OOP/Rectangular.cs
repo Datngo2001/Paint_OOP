@@ -139,6 +139,7 @@ namespace Paint_OOP
             {
                 for (int i = 0; i < Points.Length; i++)
                 {
+                    Console.WriteLine("The point {0} when moved! ", i + 1);
                     Points[i].Move(dx, dy);
                 }
             }
