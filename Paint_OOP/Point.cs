@@ -51,8 +51,19 @@ namespace Paint_OOP
         {
             X += dx;
             Y += dy;                  
-            Console.WriteLine("X = " + X );
-            Console.WriteLine("Y = " + Y);
+        }
+        public override void Turn(double angle = 0, double a = 0, double b = 0)
+        {
+            try
+            {
+                this.X = (X - a) * Math.Cos(angle) - (Y - b) * Math.Sin(angle) + a;
+                this.Y = (X - a) * Math.Sin(angle) + (Y - b) * Math.Cos(angle) + a;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
         }
         public override double CalculateArea()
         {

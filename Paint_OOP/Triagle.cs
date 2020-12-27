@@ -215,5 +215,23 @@ namespace Paint_OOP
                 Console.WriteLine(e.Message);
             }         
         }
+        public override void Turn(double angle = 0, double a = 0, double b = 0)
+        {
+            try
+            {
+                for (int i = 0; i < Pointss.Length; i++)
+                {
+                    Pointss[i].Turn(angle, a, b);
+                }
+                for (int i = 0; i < Edges.Length; i++)
+                {
+                    Edges[i].Turn(angle, a, b);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
     }
 }

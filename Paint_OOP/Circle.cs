@@ -72,6 +72,10 @@ namespace Paint_OOP
         {
             Center.Move(dx, dy);
         }
+        public override void Turn(double angle = 0, double a = 0, double b = 0)
+        {
+            Center.Turn(angle, a, b);
+        }
         public override void Draw()
         {
             Console.ForegroundColor = consoleColor;

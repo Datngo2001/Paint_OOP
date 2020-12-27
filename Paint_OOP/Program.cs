@@ -62,8 +62,13 @@ namespace Paint_OOP
                         triagle.Move(dx, dy);
 
                         break;
+<<<<<<< HEAD
                     case "4":
                         Rectangular rectangular = new Rectangular();
+=======
+                    case '3':
+                        Rectangle rectangular = new Rectangle();
+>>>>>>> 5943ce1b50aaae85ebf274dfc0cf1411fd821228
                         rectangular.Input();
                         Console.WriteLine("Display: \n\n");
                         rectangular.Output();
