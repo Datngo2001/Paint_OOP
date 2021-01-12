@@ -75,6 +75,8 @@ namespace Paint_OOP
         {
             try
             {
+                string next;
+                next = Console.ReadLine();
                 Console.Write("Name: ");
                 Name = Console.ReadLine();
                 Console.Write("Color: ");
@@ -85,6 +87,7 @@ namespace Paint_OOP
                 Console.WriteLine("Point 2: ");
                 Point2 = new Point();
                 Point2.Input();
+                CalculateLenght();
             }
             catch (Exception e)
             {

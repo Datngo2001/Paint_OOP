@@ -76,6 +76,8 @@ namespace Paint_OOP
         {
             try
             {
+                string next;
+                next = Console.ReadLine();
                 Console.WriteLine("Enter name of triagle: ");
                 Name = Console.ReadLine();
                 do
@@ -104,39 +106,39 @@ namespace Paint_OOP
             }
             
         }
-        public int CheckTriangle()
-        {
-            if (EdgeA == EdgeB || EdgeB == EdgeC || EdgeC == EdgeA)
-                if (EdgeA == EdgeB && EdgeB == EdgeC)
-                    return 1;
-                else if (EdgeA * EdgeA == EdgeB * EdgeB + EdgeC * EdgeC || EdgeB * EdgeB == EdgeA * EdgeA + EdgeC * EdgeC || EdgeB * EdgeB + EdgeA * EdgeA == EdgeC * EdgeC)
-                    return 2;
-                else return 3;
-            else if (EdgeA * EdgeA == EdgeB * EdgeB + EdgeC * EdgeC || EdgeB * EdgeB == EdgeA * EdgeA + EdgeC * EdgeC || EdgeB * EdgeB + EdgeA * EdgeA == EdgeC * EdgeC)
-                return 4;
-            else return 5;
-        }
-        public void TypeofTriangle()
-        {
-            switch (CheckTriangle())
-            {
-                case 1:
-                    Console.WriteLine("Tam giac deu \n");
-                    break;
-                case 2:
-                    Console.WriteLine("Tam giac vuong can \n");
-                    break;
-                case 3:
-                    Console.WriteLine("Tam giac can \n");
-                    break;
-                case 4:
-                    Console.WriteLine("Tam giac vuong \n");
-                    break;
-                default:
-                    Console.WriteLine("Tam giac thuong \n");
-                    break;
-            }
-        }
+        //public int CheckTriangle()
+        //{
+        //    if (EdgeA == EdgeB || EdgeB == EdgeC || EdgeC == EdgeA)
+        //        if (EdgeA == EdgeB && EdgeB == EdgeC)
+        //            return 1;
+        //        else if (EdgeA * EdgeA == EdgeB * EdgeB + EdgeC * EdgeC || EdgeB * EdgeB == EdgeA * EdgeA + EdgeC * EdgeC || EdgeB * EdgeB + EdgeA * EdgeA == EdgeC * EdgeC)
+        //            return 2;
+        //        else return 3;
+        //    else if (EdgeA * EdgeA == EdgeB * EdgeB + EdgeC * EdgeC || EdgeB * EdgeB == EdgeA * EdgeA + EdgeC * EdgeC || EdgeB * EdgeB + EdgeA * EdgeA == EdgeC * EdgeC)
+        //        return 4;
+        //    else return 5;
+        //}
+        //public void TypeofTriangle()
+        //{
+        //    switch (CheckTriangle())
+        //    {
+        //        case 1:
+        //            Console.WriteLine("Tam giac deu \n");
+        //            break;
+        //        case 2:
+        //            Console.WriteLine("Tam giac vuong can \n");
+        //            break;
+        //        case 3:
+        //            Console.WriteLine("Tam giac can \n");
+        //            break;
+        //        case 4:
+        //            Console.WriteLine("Tam giac vuong \n");
+        //            break;
+        //        default:
+        //            Console.WriteLine("Tam giac thuong \n");
+        //            break;
+        //    }
+        //}
         public override void Output()
         {
             try
@@ -148,38 +150,20 @@ namespace Paint_OOP
                 Console.WriteLine("Edge 3: " + EdgeC);
                 Console.WriteLine("Area of triangle: " + Area);
                 Console.WriteLine("The three points: ");
-                for(int i = 0; i < Pointss.Length; i++)
+                for (int i = 0; i < Pointss.Length; i++)
                 {
                     Pointss[i].Output();
                 }
-                    //switch (CheckTriangle())
-                    //{
-                    //    case 1:
-                    //        Console.WriteLine("Tam giac deu \n");
-                    //        break;
-                    //    case 2:
-                    //        Console.WriteLine("Tam giac vuong can \n");
-                    //        break;
-                    //    case 3:
-                    //        Console.WriteLine("Tam giac can \n");
-                    //        break;
-                    //    case 4:
-                    //        Console.WriteLine("Tam giac vuong \n");
-                    //        break;
-                    //    default:
-                    //        Console.WriteLine("Tam giac thuong \n");
-                    //        break;                   
-                    //}
-                }
+            }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
         }
-        //public override void ChangeColor(string newColor)
-        //{
-        //    base.ChangeColor(newColor);
-        //}
+        public override void ChangeColor(string newColor)
+        {
+            base.ChangeColor(newColor);
+        }
         public override double CalculateArea()
         {
             try

@@ -92,6 +92,8 @@ namespace Paint_OOP
         {
             try
             {
+                //string a;
+                //a = Console.ReadLine();
                 Console.Write("Enter the Name: ");
                 Name = Console.ReadLine();
                 Console.Write("Color: ");

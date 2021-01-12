@@ -85,6 +85,12 @@ namespace Paint_OOP
             Edges[2] = new Edge(Points[2], Points[3]);
             Edges[3] = new Edge(Points[3], Points[0]);
         }
+        public override void Draw()
+        {
+            Console.ForegroundColor = consoleColor;
+            Console.WriteLine("Drawed a " + Color + " rectangular " + Name + " with Height is " + Heights + " Width is " + Bottom);
+            Console.ResetColor();
+        }
         public override double CalculateArea()
         {
             double area = Heights * Bottom * 0.5;
