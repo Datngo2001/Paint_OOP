@@ -54,13 +54,21 @@ namespace Paint_OOP
         }
         public override void Output()
         {
-            Console.WriteLine("Name " + Name);
-            Console.WriteLine("Radian: " + Radius);
-            Console.WriteLine("Color: " + Color);
-            Console.WriteLine("The center: ");
+            string next;
+            next = Console.ReadLine();
+            Console.Write("Name: " + Name);
+            Console.Write("Radian: " + Radius);
+            Console.Write("Color: " + Color);
+            Console.Write("The center: ");
             center.Output();
             Area = CalculateArea();
             Console.WriteLine("Area: {0}", Area);
+            Draw();
+            Console.Write("Enter the distance dx you want to move: ");
+            Dx = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter the distance dy you want to move: ");
+            Dy = Convert.ToDouble(Console.ReadLine());
+            Move(Dx, Dy);
         }
         public override double CalculateArea()
         {

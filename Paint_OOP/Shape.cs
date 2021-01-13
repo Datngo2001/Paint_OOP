@@ -6,6 +6,9 @@ namespace Paint_OOP
 {
     abstract class Shape
     {
+        public double Dx { get; set; }
+        public double Dy { get; set; }
+        public double Dl { get; set; }
         public virtual string Name { get; set; }
         public virtual double Area { get; protected set; }
         protected ConsoleColor consoleColor = Console.ForegroundColor;

@@ -31,21 +31,44 @@ namespace Paint_OOP
         }
         public override void Input()
         {
-            Console.Write("Name ");
-            Name = Console.ReadLine();
-            Console.Write("Enter point X: ");
-            X = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Enter poiny Y: ");
-            Y = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Color: ");
-            Color = Console.ReadLine();
+            try
+            {
+                Area = CalculateArea();
+                string next;
+                next = Console.ReadLine();
+                Console.Write("Name: ");
+                Name = Console.ReadLine();
+                Console.Write("Enter point X: ");
+                X = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Enter point Y: ");
+                Y = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Color: ");
+                Color = Console.ReadLine();
+
+            } 
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
         }
         public override void Output()
         {
-            Console.WriteLine("Name " + Name);
-            Console.WriteLine("X: {0}", X);
-            Console.WriteLine("Y: {0}", Y);
-            Console.WriteLine("Color: " + Color);
+            try
+            {
+                Area = CalculateArea();
+                Console.WriteLine("Name " + Name);
+                Console.WriteLine("X: {0}", X);
+                Console.WriteLine("Y: {0}", Y);
+                Console.WriteLine("Color: " + Color);
+                Console.WriteLine("Area: " + Area);
+                Draw();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
         }
         public override void Move(double dx, double dy)
         {

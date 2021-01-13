@@ -7,7 +7,13 @@ namespace Paint_OOP
     class Triagle : Shape
     {
         protected Point[] points = new Point[3];
-        
+        public double HeightTri { get; set; }
+        public double WidthTri { get; set; }
+        public double Heighttri
+        {
+            get { return HeightTri; }
+            set { HeightTri = value; }
+        }
         public Point[] Pointss
         {
             get { return points; }
@@ -61,10 +67,10 @@ namespace Paint_OOP
         protected virtual void CreatePoint()
         {
             double p = (EdgeA + EdgeB + EdgeC) / 2;
-            double heights = 2 * Math.Sqrt(p * (p - EdgeA) * (p - EdgeB) * (p - EdgeC))/ EdgeA;
-            double width = EdgeA;
-            Pointss[1] = new Point(Name[1].ToString(), 0, width);
-            Pointss[2] = new Point(Name[2].ToString(), width, heights);
+            HeightTri = 2 * Math.Sqrt(p * (p - EdgeA) * (p - EdgeB) * (p - EdgeC))/ EdgeA;
+            WidthTri = EdgeA;
+            Pointss[1] = new Point(Name[1].ToString(), 0, HeightTri);
+            Pointss[2] = new Point(Name[2].ToString(), WidthTri, HeightTri);
         }
         protected virtual void CreateEdge()
         {
@@ -75,23 +81,17 @@ namespace Paint_OOP
         public override void Input()
         {
             try
-            {
-                string next;
-                next = Console.ReadLine();
-                Console.WriteLine("Enter name of triagle: ");
+            {            
+                Console.Write("Enter name of triagle: ");
                 Name = Console.ReadLine();
-                do
-                {
-                    Console.WriteLine("Enter color: ");
-                    Color = Console.ReadLine();
-                    Console.WriteLine("Enter the Edge 1: ");
-                    EdgeA = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Enter the Edge 2: ");
-                    EdgeB = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Enter the Edge 3: ");
-                    EdgeC = Convert.ToDouble(Console.ReadLine());
-                }
-                while (EdgeA + EdgeB <= EdgeC || EdgeB + EdgeC <= EdgeA || EdgeA + EdgeC <= EdgeB);
+                Console.Write("Enter color: ");
+                Color = Console.ReadLine();
+                Console.Write("Enter the Edge 1: ");
+                EdgeA = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Enter the Edge 2: ");
+                EdgeB = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Enter the Edge 3: ");
+                EdgeC = Convert.ToDouble(Console.ReadLine());
                 Pointss[0] = new Point(Name[0].ToString(), 0, 0);
                 CalculateArea();
                 CreatePoint();
@@ -153,7 +153,34 @@ namespace Paint_OOP
                 for (int i = 0; i < Pointss.Length; i++)
                 {
                     Pointss[i].Output();
+                    Console.WriteLine("\n");
                 }
+                Area = CalculateArea();
+                Console.WriteLine("Area: " + Area);
+                Draw();
+                string choice;
+                do
+                {
+                    Console.Write("Do you want to move the shape? Yes  or No: ");
+                    choice = Convert.ToString(Console.ReadLine());
+                    switch(choice)
+                    {
+                        case "Yes":
+                            Console.Write("Enter the distance dx you want to move: ");
+                            Dx = Convert.ToDouble(Console.ReadLine());
+                            Console.Write("Enter the distance dy you want to move: ");
+                            Dy = Convert.ToDouble(Console.ReadLine());
+                            Move(Dx, Dy);
+                            break;
+                        case "No":
+                            break;
+                        default:
+                            Console.WriteLine("ERROR!. Please enter again!");
+                            break;
+                    }
+                } while (choice != "No");
+                
+                Turn();
             }
             catch (Exception e)
             {

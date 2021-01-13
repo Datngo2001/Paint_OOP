@@ -66,6 +66,14 @@ namespace Paint_OOP
                     Points[i].Output();
                     Console.WriteLine("\n");
                 }
+                Area = CalculateArea();
+                Console.WriteLine("Area: " + Area);
+                Draw();
+                Console.Write("Enter the distance dx you want to move: ");
+                Dx = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Enter the distance dy you want to move: ");
+                Dy = Convert.ToDouble(Console.ReadLine());
+                Move(Dx, Dy);
             }
             catch (Exception e)
             {
@@ -84,6 +92,21 @@ namespace Paint_OOP
             Edges[1] = new Edge(Points[1], Points[2]);
             Edges[2] = new Edge(Points[2], Points[3]);
             Edges[3] = new Edge(Points[3], Points[0]);
+        }
+        public override void Move(double dx, double dy)
+        {
+            try
+            {
+                for (int i = 0; i < Points.Length; i++)
+                {
+                    Console.WriteLine("The point {0} when moved! ", i + 1);
+                    Points[i].Move(dx, dy);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
         public override void Draw()
         {

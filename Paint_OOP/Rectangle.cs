@@ -127,6 +127,16 @@ namespace Paint_OOP
                     Points[i].Output();
                     Console.WriteLine("\n");
                 }
+                Area = CalculateArea();
+                Console.WriteLine("Area: " + Area);
+                Draw();
+                Console.Write("Enter the distance dx you want to move: ");
+                Dx = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Enter the distance dy you want to move: ");
+                Dy = Convert.ToDouble(Console.ReadLine());
+                Move(Dx, Dy);
+                Turn();
+
             }
             catch (Exception e)
             {

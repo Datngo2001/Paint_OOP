@@ -76,15 +76,15 @@ namespace Paint_OOP
             try
             {
                 string next;
-                next = Console.ReadLine();
-                Console.Write("Name: ");
+                next = Console.ReadLine();      
+                Console.Write("Name edge: ");
                 Name = Console.ReadLine();
                 Console.Write("Color: ");
                 Color = Console.ReadLine();
-                Console.WriteLine("Point 1: ");
+                Console.Write("Point 1: ");
                 Point1 = new Point();
                 Point1.Input();
-                Console.WriteLine("Point 2: ");
+                Console.Write("Point 2: ");
                 Point2 = new Point();
                 Point2.Input();
                 CalculateLenght();
@@ -98,13 +98,19 @@ namespace Paint_OOP
         {
             try
             {
-                Console.Write("Name: " + Name);
-                Console.Write("Color: " + Color);
+                Console.WriteLine("Name: " + Name);
+                Console.WriteLine("Color: " + Color);
                 Console.WriteLine("Point 1: ");
                 Point1.Output();
                 Console.WriteLine("Point 2: ");
                 Point2.Output();
                 Console.WriteLine("Length: {0}", Length);
+                Console.WriteLine("Area: " + Area);
+                Draw();
+                Console.Write("The amout of length you want to increase or decrease: ");
+                Dl = Convert.ToDouble(Console.ReadLine());
+                LengthIncrease(Dl);
+                Turn();
             }
             catch (Exception e)
             {
@@ -139,6 +145,8 @@ namespace Paint_OOP
                 Point1.Y += (dL / 2);
                 Point2.Y -= (dL / 2);
             }
+            Console.WriteLine("X: " + Point1.X);
+            Console.WriteLine("Y: " + Point1.Y);
         }
         public override void Draw()
         {
@@ -155,7 +163,8 @@ namespace Paint_OOP
         }
         public override double CalculateArea()
         {
-            return 0;
+            Area = 0;
+            return Area;
         }
         public override void Turn(double angle = 0, double a = 0, double b = 0)
         {
