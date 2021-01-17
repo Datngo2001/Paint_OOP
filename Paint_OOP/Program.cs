@@ -77,20 +77,6 @@ namespace Paint_OOP
                         }
 
                         break;
-<<<<<<< HEAD
-                    case "4":
-                        Rectangle rectangule = new Rectangle();
-                        //>>>>>>> 5943ce1b50aaae85ebf274dfc0cf1411fd821228
-                        rectangule.Input();
-                        Console.WriteLine("Display: \n\n");
-                        rectangule.Output();
-                        rectangule.Draw();
-                        Console.Write("Enter the distance dx you want to move: ");
-                        double dx1 = Convert.ToDouble(Console.ReadLine());
-                        Console.Write("Enter the distance dy you want to move: ");
-                        double dy1 = Convert.ToDouble(Console.ReadLine());
-                        rectangule.Move(dx1, dy1);
-=======
                     case '4':
                         int choice;
                         Console.WriteLine("--------MENU---------");
@@ -141,10 +127,6 @@ namespace Paint_OOP
                         {
                             Console.WriteLine("Your choice is ERROR! please choise again");
                         }
-                        
-                        
-
->>>>>>> 81407b37efd022aaa9b6ae8ea28684bc1067e2f4
                         break;
                     case '5':
                         Circle circle = new Circle();
