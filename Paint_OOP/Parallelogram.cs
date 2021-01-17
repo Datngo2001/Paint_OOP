@@ -91,5 +91,11 @@ namespace Paint_OOP
             Area = area;
             return area;
         }
+        public override void Draw()
+        {
+            Console.ForegroundColor = consoleColor;
+            Console.WriteLine("Drawed a " + Color + " rectangular " + Name + " with Height is " + Height + " Width is " + Bottom);
+            Console.ResetColor();
+        }
     }
 }

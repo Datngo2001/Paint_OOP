@@ -62,22 +62,18 @@ namespace Paint_OOP
                         triagle.Move(dx, dy);
 
                         break;
-<<<<<<< HEAD
                     case "4":
-                        Rectangular rectangular = new Rectangular();
-=======
-                    case '3':
-                        Rectangle rectangular = new Rectangle();
->>>>>>> 5943ce1b50aaae85ebf274dfc0cf1411fd821228
-                        rectangular.Input();
+                        Rectangle rectangule = new Rectangle();
+                        //>>>>>>> 5943ce1b50aaae85ebf274dfc0cf1411fd821228
+                        rectangule.Input();
                         Console.WriteLine("Display: \n\n");
-                        rectangular.Output();
-                        rectangular.Draw();
+                        rectangule.Output();
+                        rectangule.Draw();
                         Console.Write("Enter the distance dx you want to move: ");
                         double dx1 = Convert.ToDouble(Console.ReadLine());
                         Console.Write("Enter the distance dy you want to move: ");
                         double dy1 = Convert.ToDouble(Console.ReadLine());
-                        rectangular.Move(dx1, dy1);
+                        rectangule.Move(dx1, dy1);
                         break;
                     case "5":
                         Circle circle = new Circle();
@@ -103,14 +99,12 @@ namespace Paint_OOP
                         double dy4 = Convert.ToDouble(Console.ReadLine());
                         edge.Move(dx4, dy4);
                         break;
-                    case "7":
-                        break;
                     default:
                         Console.WriteLine("Invalid choise.");
                         break;
                 }                
             }
-            while (choise != "8");
+            while (choise != "7");
         }
     }
 }
