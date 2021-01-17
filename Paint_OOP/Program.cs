@@ -99,12 +99,14 @@ namespace Paint_OOP
                         double dy4 = Convert.ToDouble(Console.ReadLine());
                         edge.Move(dx4, dy4);
                         break;
+                    case "7":
+                        break;
                     default:
                         Console.WriteLine("Invalid choise.");
                         break;
                 }                
             }
-            while (choise != "7");
+            while (choise != "8");
         }
     }
 }
