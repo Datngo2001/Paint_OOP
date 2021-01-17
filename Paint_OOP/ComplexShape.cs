@@ -46,6 +46,10 @@ namespace Paint_OOP
         public override void Draw()
         {
             Console.WriteLine("Drawed a  group of shape " + Name);
+            for (int i = 0; i < Shapes.Count; i++)
+            {
+                Shapes[i].Draw();
+            }
         }
         public override void Input()
         {

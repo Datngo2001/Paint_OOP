@@ -108,12 +108,6 @@ namespace Paint_OOP
                 Console.WriteLine(e.Message);
             }
         }
-        public override void Draw()
-        {
-            Console.ForegroundColor = consoleColor;
-            Console.WriteLine("Drawed a " + Color + " rectangular " + Name + " with Height is " + Heights + " Width is " + Bottom);
-            Console.ResetColor();
-        }
         public override double CalculateArea()
         {
             double area = Heights * Bottom * 0.5;
