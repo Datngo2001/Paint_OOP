@@ -34,6 +34,5 @@ namespace Paint_OOP
                 // Invalid color
             }
         }
-        //public void Copy();
     }
 }

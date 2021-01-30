@@ -75,8 +75,6 @@ namespace Paint_OOP
         {
             try
             {
-                string next;
-                next = Console.ReadLine();      
                 Console.Write("Name edge: ");
                 Name = Console.ReadLine();
                 Console.Write("Color: ");

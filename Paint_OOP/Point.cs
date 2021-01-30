@@ -33,9 +33,6 @@ namespace Paint_OOP
         {
             try
             {
-                Area = CalculateArea();
-                string next;
-                next = Console.ReadLine();
                 Console.Write("Name: ");
                 Name = Console.ReadLine();
                 Console.Write("Enter point X: ");
@@ -44,7 +41,6 @@ namespace Paint_OOP
                 Y = Convert.ToDouble(Console.ReadLine());
                 Console.Write("Color: ");
                 Color = Console.ReadLine();
-
             } 
             catch (Exception e)
             {
